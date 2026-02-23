@@ -1,0 +1,20 @@
+@use "../helpers" as *;
+
+.footer {
+  padding-block: fluid(20, 10);
+  width: 100%;
+  border-top: var(--border);
+  background-color: var(--grey-color);
+
+  &__inner {
+    @include flex-center;
+
+    flex-direction: column;
+    row-gap: px-to-rem(5);
+    text-align: center;
+  }
+
+  &__description {
+    @include fluid-text(22, 18);
+  }
+}

@@ -1,0 +1,51 @@
+@use "../helpers" as *;
+
+.header {
+  --announcement-opacity: 1;
+
+  &:has(.show-menu) {
+    --box-shadow: none;
+  }
+
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 0 100px;
+
+  will-change: grid-template-rows;
+
+  @mixin scrolling-header-styles {
+    --announcement-opacity: 0;
+
+    grid-template-rows: auto 0fr auto;
+    box-shadow: var(--box-shadow);
+  }
+
+  @keyframes scrolling-header {
+    to {
+      @include scrolling-header-styles;
+    }
+  }
+
+  &__marquee {
+    flex-shrink: 0;
+  }
+
+  &__announcement {
+    overflow: hidden;
+    min-height: 0;
+    opacity: var(--announcement-opacity);
+  }
+
+  &__inner {
+    width: 100%;
+    padding-block: px-to-rem(20);
+    background-color: var(--grey-color);
+  }
+}

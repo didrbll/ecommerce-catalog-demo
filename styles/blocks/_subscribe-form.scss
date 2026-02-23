@@ -1,0 +1,48 @@
+@use "../helpers" as *;
+
+.subscribe-form {
+  @include flex-center;
+
+  flex-direction: column;
+  row-gap: px-to-rem(15);
+  width: 100%;
+
+  &__field {
+    width: 75%;
+
+    @include tablet{
+      width: 100%;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: px-to-rem(55);
+    padding-inline: px-to-rem(35);
+    border: var(--border);
+    border-radius: px-to-rem(10);
+    color: var(--dark-color);
+
+    &--textarea {
+      height: px-to-rem(190);
+      padding-block: px-to-rem(18);
+      resize: none;
+
+      @include tablet{
+        height: px-to-rem(130);
+      }
+    }
+
+    @include hover{
+      background-color: var(--main-color);
+    }
+
+    &:focus {
+      border-color: var(--accent-color);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}

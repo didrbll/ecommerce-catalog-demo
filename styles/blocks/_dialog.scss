@@ -1,0 +1,100 @@
+@use "../helpers" as *;
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.7);
+}
+
+dialog, dialog::backdrop {
+  opacity: 0;
+  transition-duration: var(--transition-duration);
+  transition-behavior: allow-discrete;
+}
+
+dialog[open], dialog[open]::backdrop {
+  opacity: 1;
+}
+
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  max-width: 50%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: px-to-rem(14);
+
+  @include tablet{
+    max-width: 70%;
+  }
+
+  @include mobile{
+    max-width: 95%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(25, 15);
+    padding: fluid(25, 15) fluid(35, 20) fluid(35, 20);
+  }
+
+  &__close-button {
+    @include flex-center(true);
+
+    align-self: end;
+    padding: px-to-rem(5) px-to-rem(8);
+    border-radius: px-to-rem(10);
+    background-color: transparent;
+    border: var(--border);
+    font-weight: 600;
+
+    i {
+      font-size: px-to-rem(20);
+    }
+
+    @include hover{
+      background-color: var(--dark-color);
+      color: var(--main-color);
+      border-color: var(--main-color);
+    }
+  }
+
+  &__content {
+    @include flex-center;
+
+    flex-direction: column;
+    row-gap: fluid(35, 25);
+  }
+
+  &__body {
+    display: grid;
+    row-gap: fluid(25, 15);
+    text-align: center;
+    width: 100%;
+  }
+
+  &__title {
+    background-color: var(--main-color);
+    padding-inline: px-to-rem(8);
+    border-radius: px-to-rem(8);
+    text-align: center;
+  }
+
+  &__text {
+    p {
+      @include fluid-text(20, 16);
+    }
+  }
+}
+
+.open-dialog {
+  background-color: inherit;
+  border: none;
+
+  @include hover{
+    color: var(--accent-color);
+  }
+}

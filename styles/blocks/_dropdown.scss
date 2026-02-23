@@ -1,0 +1,66 @@
+@use "../helpers" as *;
+
+.dropdown {
+  cursor: pointer;
+
+  @include tablet-above{
+    position: relative;
+  }
+
+  &__arrow{
+    font-size: px-to-rem(20);
+    transition: transform .4s;
+  }
+
+  &__list {
+    max-height: 0;
+    overflow: hidden;
+
+    @include tablet-above {
+      position: absolute;
+      top: 164%;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: px-to-rem(10);
+      height: 100px;
+      border-radius: px-to-rem(8);
+      background-color: var(--grey-color-light);
+      transition: max-height .4s ease-out;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    @include tablet-above{
+      padding-inline: px-to-rem(20);
+      column-gap: px-to-rem(5);
+    }
+
+    @include tablet {
+      justify-content: start;
+      column-gap: px-to-rem(5);
+      padding-left: fluid(45, 35);
+    }
+  }
+
+  @include hover{
+    .dropdown__list {
+      max-height: px-to-rem(100);
+      transition: max-height .4s ease-in;
+
+      @include tablet-above{
+        border: var(--border);
+        border-color: var(--accent-color);
+      }
+    }
+
+    .dropdown__arrow{
+      transform: rotate(180deg);
+    }
+  }
+}

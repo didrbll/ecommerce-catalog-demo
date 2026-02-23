@@ -1,0 +1,40 @@
+@use "../helpers" as *;
+
+.announcement {
+  background-color: var(--dark-color);
+
+  &__inner {
+    @include flex-center;
+
+    padding-block: px-to-rem(5);
+  }
+
+  &__text, &__link {
+    @include fluid-text(12, 10);
+
+    color: var(--light-color);
+    letter-spacing: px-to-rem(1);
+  }
+
+  &__text {
+    position: relative;
+    font-weight: 500;
+    margin-right: px-to-rem(11);
+    padding-right: px-to-rem(10);
+
+    &::after {
+      content: "•";
+      position: absolute;
+      right: 0;
+      width: px-to-rem(1);
+      height: px-to-rem(1);
+      color: inherit;
+    }
+  }
+
+  &__link {
+    border-bottom: var(--border);
+    border-color: inherit;
+  }
+
+}

@@ -1,0 +1,20 @@
+@use "helpers" as *;
+
+:root {
+  --main-color: #F7FF58;
+  --accent-color: #FF934F;
+  --grey-color: #EEF0F2;
+  --grey-color-light: #f7f7f7;
+  --dark-color: #353B3C;
+  --light-color: #ffffff;
+
+  --container-width: #{px-to-rem(1440)};
+  --container-padding-x: #{px-to-rem(20)};
+
+  --border: #{px-to-rem(1)} solid var(--dark-color);
+  --box-shadow: 0 #{px-to-rem(2)} #{px-to-rem(2)} rgb(0 0 0 / 0.5);
+
+  --transition-duration: 0.2s;
+
+  --font-family-base: 'Heebo', sans-serif;
+}

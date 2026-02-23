@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <title>Example</title>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__marquee marquee">
+      <div class="marquee__track">
+        <span class="marquee__content">
+          🔥 Hot deal! 50% off everything until the end of the week! See the catalog for details&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+        </span>
+        <span class="marquee__content">
+          🔥 Hot deal! 50% off everything until the end of the week! See the catalog for details&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+        </span>
+        <span class="marquee__content">
+          🔥 Hot deal! 50% off everything until the end of the week! See the catalog for details&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+        </span>
+        <span class="marquee__content">
+          🔥 Hot deal! 50% off everything until the end of the week! See the catalog for details&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+        </span>
+      </div>
+    </div>
+    <div class="header__announcement announcement">
+      <div class="container">
+        <div class="announcement__inner">
+          <span class="announcement__text">Same-Day Store Pick Up</span>
+          <a href="#" class="announcement__link">
+            See Delivery Options &amp; Payment Methods
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="header__inner">
+      <nav class="header__navigation navigation container">
+        <div class="navigation__data">
+          <a href="/" class="header__logo logo" title="Home" aria-label="Home">
+            <img class="logo__image" src="./logo.svg" alt="" width="30" height="30" loading="eager">
+          </a>
+          <button class="navigation__toggle" id="navigation-toggle" type="button">
+            <i class="ri-menu-line navigation__burger"></i>
+            <i class="ri-close-line navigation__close"></i>
+          </button>
+        </div>
+        <div class="navigation__menu" id="navigation__menu">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="/" class="navigation__link">
+                Headphones<span>&nbsp;and game audio</span>
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a href="/" class="navigation__link">
+                Speakers<span>&nbsp;and hi-fi audio</span>
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a href="/" class="navigation__link">
+                Vinyl<span>&nbsp;and music</span>
+              </a>
+            </li>
+            <li class="navigation__item-dropdown dropdown">
+              <a href="/" class="navigation__link navigation__link--dropdown">
+                Customer support
+                <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+              </a>
+
+              <ul class="dropdown__list">
+                <li class="dropdown__item">
+                  <button  class="navigation__link dropdown__link open-dialog" id="open-dialog" type="button">
+                    <i class="ri-message-3-line"></i>
+                    Contact us
+                  </button>
+                </li>
+                <li class="dropdown__item">
+                  <a href="/" class="navigation__link dropdown__link">
+                    <i class="ri-question-line"></i>
+                    Help Center
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="section container">
+      <div class="section__header section__header--filter">
+        <h1 class="section__title h2">Popular</h1>
+        <div class="filter-category grid grid--6 hidden-mobile">
+          <h2 class="visually-hidden">Filter by type</h2>
+          <button class="filter-category__button button is-active" data-filter="all">Show all</button>
+          <button class="filter-category__button button" data-filter="personal">Personal Audio</button>
+          <button class="filter-category__button button" data-filter="hifi">Hi-Fi Audio</button>
+          <button class="filter-category__button button" data-filter="microphone">Microphones</button>
+          <button class="filter-category__button button" data-filter="game">Game Audio</button>
+          <button class="filter-category__button button" data-filter="vinyl">Vinyl and Music</button>
+        </div>
+        <a href="/" class="filter-category__link visible-mobile">All Products</a>
+      </div>
+      <div class="section__body">
+        <ul class="products grid grid--4"></ul>
+        <template id="product-card-template">
+          <li class="products__item" data-category="">
+            <article class="product-card" data-product-id="">
+              <img class="product-card__image" src=""
+                   alt=""
+                   width="300" height="300"
+                   loading="lazy"
+              >
+              <h3 class="product-card__title">
+                <a href="#"></a>
+              </h3>
+              <div class="product-card__price"></div>
+              <button class="product-card__button button" type="button">Add to cart</button>
+            </article>
+          </li>
+        </template>
+
+        <template id="empty-message-template">
+          <p class="products__empty-message">
+            No products find yet
+            <i class="ri-emotion-unhappy-line"></i>
+          </p>
+        </template>
+      </div>
+      <button class="button button--load-more" type="button" id="load-more-button">
+        Load More
+        <i class="ri-loader-2-fill"></i>
+      </button>
+    </section>
+
+    <section class="section container">
+      <div class="section__header">
+        <h2 class="section__title">Long Page</h2>
+        <div class="section__description">
+          <p>Wait for 40 seconds, scroll down or click "Contact us"</p>
+        </div>
+      </div>
+
+      <div class="section__body">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae nulla perspiciatis quo! Alias
+          doloremque doloribus fugit, ipsam laborum magnam nesciunt placeat quae repudiandae sapiente, suscipit ut vel
+          veniam! Adipisci et illum incidunt, laborum officiis reiciendis sequi sit vero! Accusamus amet autem commodi
+          cupiditate dignissimos dolor dolore dolorem eius eos eveniet excepturi facere fugit illum inventore ipsa
+          laboriosam libero magni minima molestiae, mollitia nesciunt numquam odit officiis omnis placeat porro quasi quis
+          quisquam quo quod tempora tempore ullam ut vel velit veritatis vero! Blanditiis et facilis laboriosam nostrum
+          quaerat quam quia ratione tempore totam, voluptatibus. Excepturi odio recusandae repudiandae sit sunt. Amet, est
+          facere? Adipisci autem beatae commodi culpa cum cumque delectus deleniti dolorem dolorum earum eius ex fuga fugiat
+          fugit illo ipsa ipsum laudantium nam neque nihil nisi non nulla perspiciatis qui quia quibusdam quidem sequi sint
+          sunt tenetur ut vel, veritatis voluptatum? Animi, beatae cum eaque facere facilis id impedit ipsa iure laborum
+          magnam nam numquam odit, officia perferendis perspiciatis provident quam recusandae sint tempore voluptatem?
+          Consequuntur eaque necessitatibus obcaecati quos tenetur totam voluptatibus? Ab aut consectetur dolorem ex facilis
+          illum incidunt inventore laboriosam minus modi mollitia nemo neque nostrum numquam officiis placeat porro possimus
+          quia quisquam quod reiciendis repellendus repudiandae sed totam veniam veritatis vitae, voluptates! A ad aut
+          consequuntur corporis dignissimos doloremque dolorum eaque et eum hic id illum minima minus molestiae mollitia nam
+          nisi non pariatur perferendis, quas, quo repellendus sapiente sint sunt totam vitae voluptatibus? Atque laborum
+          necessitatibus voluptatibus? Ab consectetur cum cumque dicta error excepturi expedita fugiat nam quidem
+          reprehenderit repudiandae, vel voluptate. Ab aliquam aliquid culpa delectus dolorum ea eaque esse et ex expedita
+          facilis illum impedit laborum minus molestias nesciunt officiis quaerat quibusdam, quisquam repellendus sint
+          soluta tenetur veniam. Adipisci commodi consequuntur dicta eius eum incidunt, ipsa libero modi mollitia, nam neque
+          nostrum, optio perferendis qui rem suscipit vel. Aperiam architecto aspernatur blanditiis consectetur consequuntur
+          distinctio, est harum illo incidunt libero maxime minus nemo nisi, nobis nostrum numquam obcaecati quaerat quas
+          qui quidem quis quo repellat rerum temporibus veritatis vero voluptas voluptates! Ab alias aspernatur debitis
+          dolores eaque error excepturi explicabo id impedit iusto magnam minus mollitia odio, officia perspiciatis placeat
+          porro quo, sit. Accusantium alias animi aut corporis dolore, dolores eligendi, est et illo illum, incidunt ipsa
+          iste odit recusandae repudiandae sunt suscipit totam veniam veritatis voluptate? Ab accusamus alias aliquam
+          aperiam architecto asperiores at aut, autem commodi dolorem doloribus dolorum explicabo facilis fugit, hic
+          inventore labore laudantium, maxime nesciunt nobis nulla perspiciatis praesentium quae quos repudiandae sapiente
+          soluta tempora unde vel veniam. Accusamus adipisci animi eligendi expedita, inventore rerum soluta temporibus
+          tenetur. Aperiam aut iusto neque officiis quis repudiandae sint sunt, tempora? Amet beatae commodi consectetur
+          consequuntur culpa deserunt dignissimos distinctio dolor dolores doloribus et hic id illo inventore iste, itaque
+          iure laboriosam magni minus necessitatibus non quae quaerat quasi quia quidem quo ratione soluta temporibus veniam
+          voluptas! Beatae dignissimos ea eaque, earum eius est, ex impedit iure laborum minima porro quas quo sequi soluta
+          totam, vero voluptatum. Aliquam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae nulla perspiciatis quo! Alias
+          doloremque doloribus fugit, ipsam laborum magnam nesciunt placeat quae repudiandae sapiente, suscipit ut vel
+          veniam! Adipisci et illum incidunt, laborum officiis reiciendis sequi sit vero! Accusamus amet autem commodi
+          cupiditate dignissimos dolor dolore dolorem eius eos eveniet excepturi facere fugit illum inventore ipsa
+          laboriosam libero magni minima molestiae, mollitia nesciunt numquam odit officiis omnis placeat porro quasi quis
+          quisquam quo quod tempora tempore ullam ut vel velit veritatis vero! Blanditiis et facilis laboriosam nostrum
+          quaerat quam quia ratione tempore totam, voluptatibus. Excepturi odio recusandae repudiandae sit sunt. Amet, est
+          facere? Adipisci autem beatae commodi culpa cum cumque delectus deleniti dolorem dolorum earum eius ex fuga fugiat
+          fugit illo ipsa ipsum laudantium nam neque nihil nisi non nulla perspiciatis qui quia quibusdam quidem sequi sint
+          sunt tenetur ut vel, veritatis voluptatum? Animi, beatae cum eaque facere facilis id impedit ipsa iure laborum
+          magnam nam numquam odit, officia perferendis perspiciatis provident quam recusandae sint tempore voluptatem?
+          Consequuntur eaque necessitatibus obcaecati quos tenetur totam voluptatibus? Ab aut consectetur dolorem ex facilis
+          illum incidunt inventore laboriosam minus modi mollitia nemo neque nostrum numquam officiis placeat porro possimus
+          quia quisquam quod reiciendis repellendus repudiandae sed totam veniam veritatis vitae, voluptates! A ad aut
+          consequuntur corporis dignissimos doloremque dolorum eaque et eum hic id illum minima minus molestiae mollitia nam
+          nisi non pariatur perferendis, quas, quo repellendus sapiente sint sunt totam vitae voluptatibus? Atque laborum
+          necessitatibus voluptatibus? Ab consectetur cum cumque dicta error excepturi expedita fugiat nam quidem
+          reprehenderit repudiandae, vel voluptate. Ab aliquam aliquid culpa delectus dolorum ea eaque esse et ex expedita
+          facilis illum impedit laborum minus molestias nesciunt officiis quaerat quibusdam, quisquam repellendus sint
+          soluta tenetur veniam. Adipisci commodi consequuntur dicta eius eum incidunt, ipsa libero modi mollitia, nam neque
+          nostrum, optio perferendis qui rem suscipit vel. Aperiam architecto aspernatur blanditiis consectetur consequuntur
+          distinctio, est harum illo incidunt libero maxime minus nemo nisi, nobis nostrum numquam obcaecati quaerat quas
+          qui quidem quis quo repellat rerum temporibus veritatis vero voluptas voluptates! Ab alias aspernatur debitis
+          dolores eaque error excepturi explicabo id impedit iusto magnam minus mollitia odio, officia perspiciatis placeat
+          porro quo, sit. Accusantium alias animi aut corporis dolore, dolores eligendi, est et illo illum, incidunt ipsa
+          iste odit recusandae repudiandae sunt suscipit totam veniam veritatis voluptate? Ab accusamus alias aliquam
+          aperiam architecto asperiores at aut, autem commodi dolorem doloribus dolorum explicabo facilis fugit, hic
+          inventore labore laudantium, maxime nesciunt nobis nulla perspiciatis praesentium quae quos repudiandae sapiente
+          soluta tempora unde vel veniam. Accusamus adipisci animi eligendi expedita, inventore rerum soluta temporibus
+          tenetur. Aperiam aut iusto neque officiis quis repudiandae sint sunt, tempora? Amet beatae commodi consectetur
+          consequuntur culpa deserunt dignissimos distinctio dolor dolores doloribus et hic id illo inventore iste, itaque
+          iure laboriosam magni minus necessitatibus non quae quaerat quasi quia quidem quo ratione soluta temporibus veniam
+          voluptas! Beatae dignissimos ea eaque, earum eius est, ex impedit iure laborum minima porro quas quo sequi soluta
+          totam, vero voluptatum. Aliquam.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer-trigger" class="footer container">
+    <div class="footer__inner">
+      <h2 class="footer__title">Footer</h2>
+      <div class="footer__description">
+        <p>A scroll trigger is implemented here.</p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="dialog" id="app-dialog">
+    <div class="dialog__wrapper">
+      <button id="close-dialog" class="dialog__close-button" aria-label="Закрыть">
+        <i class="ri-close-line"></i>
+      </button>
+      <div class="dialog__content">
+        <img class="logo__image" src="./logo.svg" alt="" width="60" height="60" loading="lazy">
+        <h2 class="dialog__title" id="dialog-title">Title</h2>
+        <div class="dialog__body" id="dialog-body">
+
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>

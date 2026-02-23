@@ -1,0 +1,36 @@
+@use "../helpers" as *;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: px-to-rem(15) ;
+  height: 100%;
+  padding: px-to-rem(30) px-to-rem(25);
+  border: var(--border);
+  border-color: var(--dark-color);
+  border-radius: px-to-rem(10);
+  box-shadow: 0 px-to-rem(5) 0 0 var(--dark-color);
+
+  &__image {
+    align-self: center;
+    max-height: px-to-rem(255);
+    height: 100%;
+
+  }
+
+  &__title {
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__price {
+    margin-top: auto;
+    text-align: center;
+    font-weight: 700;
+  }
+
+}

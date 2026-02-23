@@ -1,0 +1,10 @@
+@use "../helpers" as *;
+
+.products {
+  &__empty-message {
+    grid-column: 1/-1;
+    width: 100%;
+    font-size: px-to-rem(20);
+    text-align: center;
+  }
+}

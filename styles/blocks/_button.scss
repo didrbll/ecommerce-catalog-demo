@@ -1,0 +1,24 @@
+@use "../helpers" as *;
+
+.button {
+  @include flex-center(true);
+
+  min-height: px-to-rem(55);
+  padding-inline: px-to-rem(35);
+  font-size: px-to-rem(20);
+  border-radius: px-to-rem(10);
+  background-color: var(--main-color);
+  border: var(--border);
+  font-weight: 600;
+
+  @include hover{
+    background-color: var(--dark-color);
+    color: var(--main-color);
+    border-color: var(--main-color);
+  }
+
+  &--load-more{
+    justify-self: center;
+    column-gap: px-to-rem(5);
+  }
+}

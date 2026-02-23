@@ -1,0 +1,36 @@
+@use "../helpers" as *;
+
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: var(--main-color);
+  border-bottom: var(--border);
+
+  @include hover{
+    .marquee__track{
+      animation-play-state: paused;
+    }
+  }
+
+  &__track {
+    display: flex;
+    width: fit-content;
+    animation: scroll-infinite 20s linear infinite;
+  }
+
+  &__content {
+    padding-block: px-to-rem(10);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,35 @@
+@use "../helpers" as *;
+
+.filter-category {
+  gap: px-to-rem(10);
+
+  @include tablet{
+    width: 100%;
+  }
+
+  &__button {
+    background-color: transparent;
+    padding-inline: px-to-rem(20);
+    height: px-to-rem(50);
+    text-align: center;
+    text-wrap: nowrap;
+
+    &.is-active {
+      pointer-events: none;
+      background-color: var(--dark-color);
+      color: var(--main-color);
+      border-color: var(--main-color);
+      box-shadow: 0 0 px-to-rem(10) rgb(0 0 0 / .3);
+    }
+
+    @include mobile{
+      padding-inline: px-to-rem(10);
+    }
+  }
+
+  &__link {
+    font-size: px-to-rem(20);
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+}

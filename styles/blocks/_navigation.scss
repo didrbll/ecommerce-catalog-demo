@@ -1,0 +1,102 @@
+@use "../helpers" as *;
+
+.navigation {
+ @include tablet-above{
+   display: flex;
+   justify-content: space-between;
+ }
+
+  &__data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__toggle {
+    display: block;
+    position: relative;
+    width: px-to-rem(36);
+    height: px-to-rem(36);
+    padding: 0;
+    background-color: transparent;
+    border: none;
+
+    @include tablet-above{
+      display: none;
+    }
+  }
+
+  &__burger, &__close {
+    @include abs-center;
+
+    font-size: px-to-rem(25);
+    cursor: pointer;
+    transition: opacity .1s, transform .4s;
+  }
+
+  &__close {
+    opacity: 0;
+  }
+
+  &__menu {
+    @include tablet {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      overflow: auto;
+      pointer-events: none;
+      opacity: 0;
+      transition: top .4s, opacity .3s;
+    }
+
+    &::-webkit-scrollbar {
+      @include tablet{
+        width: 0;
+      }
+    }
+  }
+
+  &__list {
+    @include tablet-above {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      column-gap: fluid(40, 20);
+    }
+
+    @include tablet{
+      background-color: var(--grey-color);
+    }
+  }
+
+  &__link {
+    transition: background-color .3s, color .3s;
+
+    @include tablet-above{
+      align-items: center;
+    }
+
+    @include tablet{
+      padding: px-to-rem(10) px-to-rem(20);
+      background-color: var(--grey-color);
+      font-weight: 600;
+      font-size: fluid(20, 16);
+    }
+
+    &--dropdown {
+      @include tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    span {
+      @include mobile-s{
+        display: none;
+      }
+    }
+  }
+}

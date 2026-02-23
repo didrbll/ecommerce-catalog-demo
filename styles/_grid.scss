@@ -1,0 +1,57 @@
+@use "helpers" as *;
+
+.grid {
+  --gridColumns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--gridColumns), 1fr);
+  gap: px-to-rem(40);
+
+  @include laptop {
+    gap: px-to-rem(30);
+  }
+
+  @for $i from 2 through 12 {
+    &--#{$i} {
+      --gridColumns: #{$i};
+    }
+  }
+
+  &--6 {
+    @include tablet {
+      --gridColumns: 4;
+    }
+
+    @include mobile {
+      --gridColumns: 3;
+    }
+  }
+
+  &--4 {
+    @include laptop {
+      --gridColumns: 3;
+    }
+
+    @include tablet {
+      --gridColumns: 2;
+    }
+
+    @include mobile {
+      --gridColumns: 1;
+    }
+  }
+
+  &--3 {
+    @include mobile {
+      --gridColumns: 1;
+    }
+  }
+
+  &--2 {
+    @include tablet {
+      --gridColumns: 1;
+    }
+  }
+
+
+}
