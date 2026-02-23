@@ -13,10 +13,8 @@
   width: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  animation-name: scrolling-header;
-  animation-fill-mode: both;
-  animation-timeline: scroll();
-  animation-range: 0 100px;
+
+  transition: grid-template-rows 0.3s ease, box-shadow 0.3s ease;
 
   will-change: grid-template-rows;
 
@@ -25,6 +23,18 @@
 
     grid-template-rows: auto 0fr auto;
     box-shadow: var(--box-shadow);
+  }
+
+  @supports (animation-timeline: scroll()) {
+    animation-name: scrolling-header;
+    animation-fill-mode: both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+    transition: none;
+  }
+
+  &.is-scrolled {
+    @include scrolling-header-styles;
   }
 
   @keyframes scrolling-header {
@@ -41,6 +51,11 @@
     overflow: hidden;
     min-height: 0;
     opacity: var(--announcement-opacity);
+    transition: opacity 0.3s ease;
+
+    @supports (animation-timeline: scroll()) {
+      transition: none;
+    }
   }
 
   &__inner {
