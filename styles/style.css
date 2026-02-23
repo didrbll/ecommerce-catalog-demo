@@ -881,6 +881,14 @@ a[class] {
   font-weight: 700;
 }
 
+.body-content {
+  display: grid;
+  row-gap: 0.625rem;
+}
+.body-content:not(:last-child) {
+  margin-bottom: 3.125rem;
+}
+
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.7);
 }
