@@ -472,6 +472,12 @@ a[class] {
   justify-self: center;
   column-gap: 0.3125rem;
 }
+@media (width <= 47.99875rem) {
+  .button--load-more {
+    background-color: var(--dark-color);
+    color: var(--main-color);
+  }
+}
 
 .section {
   display: grid;
@@ -483,9 +489,6 @@ a[class] {
   align-items: center;
   gap: 2.5rem;
 }
-.section__header--filter {
-  justify-content: space-between;
-}
 @media (width <= 80.06125rem) {
   .section__header {
     flex-direction: column;
@@ -494,6 +497,18 @@ a[class] {
 @media (width <= 47.99875rem) {
   .section__header {
     flex-direction: row;
+  }
+}
+.section__header--filter {
+  justify-content: space-between;
+}
+@media (width <= 47.99875rem) {
+  .section__header:has(.section__description) {
+    flex-direction: column;
+  }
+  .section__header:has(.section__description) .section__description {
+    text-align: center;
+    text-wrap: balance;
   }
 }
 .section__title {

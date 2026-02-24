@@ -10,16 +10,27 @@
     align-items: center;
     gap: px-to-rem(40);
 
-    &--filter{
-      justify-content: space-between;
-    }
-
     @include laptop{
       flex-direction: column;
     }
 
     @include mobile{
       flex-direction: row;
+    }
+
+    &--filter{
+      justify-content: space-between;
+    }
+
+    &:has(.section__description) {
+      @include mobile{
+        flex-direction: column;
+
+        .section__description {
+          text-align: center;
+          text-wrap: balance;
+        }
+      }
     }
   }
 
